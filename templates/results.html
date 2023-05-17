@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles.css')}}"
+    />
+  </head>
+  <body>
+    <h1 text-align>Taulell d'escacs</h1>
+    <table>
+        {% for fila in taulell %}
+          <tr>
+            {% for casella in fila %}
+              <td>{{ casella }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      <tr>
+        <th></th>
+        <th>Columna 1</th>
+        <th>Columna 2</th>
+        <th>Columna 3</th>
+        <th>Columna 4</th>
+        <th>Columna 5</th>
+        <th>Columna 6</th>
+        <th>Columna 7</th>
+        <th>Columna 8</th>
+      </tr>
+      <tr>
+        <th>Fila 1</th>
+        <td class="negre">Contingut 1</td>
+        <td class="blanc">Contingut 2</td>
+        <td class="negre">Contingut 3</td>
+        <td class="blanc">Contingut 4</td>
+        <td class="negre">Contingut 5</td>
+        <td class="blanc">Contingut 6</td>
+        <td class="negre">Contingut 7</td>
+        <td class="blanc">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 2</th>
+        <td class="blanc">Contingut 1</td>
+        <td class="negre">Contingut 2</td>
+        <td class="blanc">Contingut 3</td>
+        <td class="negre">Contingut 4</td>
+        <td class="blanc">Contingut 5</td>
+        <td class="negre">Contingut 6</td>
+        <td class="blanc">Contingut 7</td>
+        <td class="negre">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 3</th>
+        <td class="negre">Contingut 1</td>
+        <td class="blanc">Contingut 2</td>
+        <td class="negre">Contingut 3</td>
+        <td class="blanc">Contingut 4</td>
+        <td class="negre">Contingut 5</td>
+        <td class="blanc">Contingut 6</td>
+        <td class="negre">Contingut 7</td>
+        <td class="blanc">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 4</th>
+        <td class="blanc">Contingut 1</td>
+        <td class="negre">Contingut 2</td>
+        <td class="blanc">Contingut 3</td>
+        <td class="negre">Contingut 4</td>
+        <td class="blanc">Contingut 5</td>
+        <td class="negre">Contingut 6</td>
+        <td class="blanc">Contingut 7</td>
+        <td class="negre">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 5</th>
+        <td class="negre">Contingut 1</td>
+        <td class="blanc">Contingut 2</td>
+        <td class="negre">Contingut 3</td>
+        <td class="blanc">Contingut 4</td>
+        <td class="negre">Contingut 5</td>
+        <td class="blanc">Contingut 6</td>
+        <td class="negre">Contingut 7</td>
+        <td class="blanc">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 6</th>
+        <td class="blanc">Contingut 1</td>
+        <td class="negre">Contingut 2</td>
+        <td class="blanc">Contingut 3</td>
+        <td class="negre">Contingut 4</td>
+        <td class="blanc">Contingut 5</td>
+        <td class="negre">Contingut 6</td>
+        <td class="blanc">Contingut 7</td>
+        <td class="negre">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 7</th>
+        <td class="negre">Contingut 1</td>
+        <td class="blanc">Contingut 2</td>
+        <td class="negre">Contingut 3</td>
+        <td class="blanc">Contingut 4</td>
+        <td class="negre">Contingut 5</td>
+        <td class="blanc">Contingut 6</td>
+        <td class="negre">Contingut 7</td>
+        <td class="blanc">Contingut 8</td>
+      </tr>
+      <tr>
+        <th>Fila 8</th>
+        <td class="blanc">Contingut 1</td>
+        <td class="negre">Contingut 2</td>
+        <td class="blanc">Contingut 3</td>
+        <td class="negre">Contingut 4</td>
+        <td class="blanc">Contingut 5</td>
+        <td class="negre">Contingut 6</td>
+        <td class="blanc">Contingut 7</td>
+        <td class="negre">Contingut 8</td>
+      </tr>
+    </table>
+    <tr>
+    <th>Id</th>
+    <td>{{userData[0]}}</td>
+    </tr>
+  </tr>
+  <tr>
+    <th>Nickname</th>
+    <td>{{userData[1]}}</td>
+  </tr>
+</table>
+  <!-- <form action="{{ url_for('mostra_taulell') }}" method="POST" class="formulario"> -->
+    <a href="/mostra_taulell"><input type="submit" value="Jugar" /></a>
+  <!-- </form> -->
+  </body>
+</html>

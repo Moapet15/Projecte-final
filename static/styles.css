@@ -1,0 +1,224 @@
+/* CSS reset: provides browser compatibility */
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* Global CSS variables declaration */
+:root{
+    --color1: #1EF7AE;
+    --color2: #1AD662;
+    --color3: #28ED3C;
+    --color-4: #9BF71E;
+    --color-text: black;
+}
+
+/* Layout styles (apply to all pages */
+body{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    align-items: center;
+    min-height: 100vh;
+    font-size: 20px;
+}
+
+header{
+    width: 100%;
+    height: 20%;
+    background-color: var(--color1);
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+footer{
+    width: 100%;
+    height: 20%;
+    background-color: var(--color3);
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    margin-top: 10vh;
+    margin-bottom: auto;
+}
+
+/* Home page styles */
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 3vw;
+    width: 30vw;
+    margin-top: 20vh;
+}
+
+button.login{
+    background-color: var(--color3);
+    width: 20vw;
+    border: none;
+    height: 5vh;
+    cursor: pointer;   
+}
+
+button.login:hover{
+    border: solid grey 2px; 
+    font-style: italic;
+}
+
+button.signin{
+    background-color: var(--color2);
+    width: 20vw;
+    border: none;
+    height: 5vh;
+    cursor: pointer;   
+}
+
+button.signin:hover{
+    border: solid grey 2px; 
+    font-style: italic;
+}
+
+/* Login page styles */
+.formulario{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+    width: 60vw;
+    height: auto;
+    align-items: center;
+}
+
+.formulario input{
+    width: 80%;
+}
+
+.formulario input[type="submit"]{
+    background-color: var(--color2);
+    width: 30%;
+    border: none;
+    height: 5vh;
+    cursor: pointer;    
+}
+
+.formulario input[type="submit"]:hover{
+    border: solid grey 2px; 
+    font-style: italic;
+}
+
+.formulario input[type="submit"]:active{
+    border: solid black 2px; 
+}
+
+/* Sign-in page styles */
+/* TBD */
+
+/* Results page styles */
+table{
+    border-collapse: collapse;
+    width: 90vw;
+}
+
+td,th{
+    border: solid 2px var(--color3);
+    text-align: center;
+}
+
+th:nth-of-type(1){
+    width: 10%;
+}
+
+th:nth-of-type(2){
+    width: 20%;
+}
+
+th:nth-of-type(3), th:nth-of-type(4){
+    width: 25%;
+}
+
+th:nth-of-type(5){
+    width: 10%;
+}
+
+th:nth-of-type(6){
+    width: 10%;
+}
+
+p.login_ok{
+    color: green;
+}
+
+p.login_ko{
+    color:red;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+  .negre{
+    background-color: black;
+  }
+  .blanc{
+    background-color: white;
+  }
+
+table{
+    border-collapse: collapse;
+    margin: 20px;
+}
+  
+td{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+  .taulell {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+  }
+  .casella {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .blanc {
+    background-color: white;
+  }
+  .negre {
+    background-color: rgb(185, 53, 53);
+  }
+  .pessa {
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+  }

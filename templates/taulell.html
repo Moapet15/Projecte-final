@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Taulell d'escacs</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles.css')}}"
+    />
+  </head>
+  <body>
+    <table>
+      {% for fila in taulell %}
+      <tr>
+        {% for casella in fila %}
+        <td {% if casella['fons'] == 'Blanc' %}class="blanc"{% else %}class="negre"{% endif %}>
+          {% if casella['color'] == 'N' %}
+            {% if casella['fitxa'] == 'P' %}
+              <img src="/static/Pesses/P_N.png" alt="P_N" class="pessa">
+            {% elif casella['fitxa'] == 'T' %}
+              <img src="/static/Pesses/T_N.png" alt="T_N" class="pessa">
+            {% elif casella['fitxa'] == 'C' %}
+              <img src="/static/Pesses/C_N.png" alt="C_N" class="pessa">
+            {% elif casella['fitxa'] == 'A' %}
+              <img src="/static/Pesses/A_N.png" alt="A_N" class="pessa">
+            {% elif casella['fitxa'] == 'Q' %}
+              <img src="/static/Pesses/Q_N.png" alt="Q_N" class="pessa">
+            {% elif casella['fitxa'] == 'K' %}
+              <img src="/static/Pesses/K_N.png" alt="K_N" class="pessa">
+            {% endif %}
+          {% endif %}
+          {% if casella['color'] == 'B' %}
+            {% if casella['fitxa'] == 'P' %}
+              <img src="/static/Pesses/P_B.png" alt="P_B" class="pessa">
+            {% elif casella['fitxa'] == 'T' %}
+              <img src="/static/Pesses/T_B.png" alt="T_B" class="pessa">
+            {% elif casella['fitxa'] == 'C' %}
+              <img src="/static/Pesses/C_B.png" alt="C_B" class="pessa">
+            {% elif casella['fitxa'] == 'A' %}
+              <img src="/static/Pesses/A_B.png" alt="A_B" class="pessa">
+            {% elif casella['fitxa'] == 'Q' %}
+              <img src="/static/Pesses/Q_B.png" alt="Q_B" class="pessa">
+            {% elif casella['fitxa'] == 'K' %}
+              <img src="/static/Pesses/K_B.png" alt="K_B" class="pessa">
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+    <form action="{{url_for('mostra_taulell')}}" method="POST">
+      <label for="origen">Origen: </label>
+      <input type="number" name="origen" placeholder="origen" />
+      <label for="desti">Desti: </label>
+      <input type="number" name="desti" placeholder="desti" />
+      <input type="submit" value="Fer moviment" />
+    </form>
+  </body>
+</html>

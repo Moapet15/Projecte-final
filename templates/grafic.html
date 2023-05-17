@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='styles.css')}}"
+    />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <header>
+      <h1>Aplicació web amb base de dades (M02-UF3-AC4)</h1>
+    </header>
+    <main>
+      {% if login %}
+      <p class="login_ok">LOGIN CORRECTO</p>
+      <div>
+        <h2>Gráfico de barras:</h2>
+        <img src="{{ grafic_url }}" alt="Gráfico de barras" />
+      </div>
+      {% else %}
+      <p class="login_ko">LOGIN INCORRECTO</p>
+      {% endif %}
+    </main>
+    <footer>
+      <p>ETPX 2022-2023</p>
+    </footer>
+  </body>
+</html>

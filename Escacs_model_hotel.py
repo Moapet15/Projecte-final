@@ -146,7 +146,13 @@ def mostra_taulell():
             missatge = "El moviment s'ha completat correctament."
             executar_moviment()
             borrar_contingut_CSV()
-            return render_template("taulell.html", taulell=taulell, missatge=missatge)
+            if comprovar_vicotria() == False:
+                print(comprovar_vicotria())
+                return render_template("taulell.html", taulell=taulell, missatge=missatge)
+            elif comprovar_vicotria() == "Guanyen les negres":
+                return render_template("home.html")
+            elif comprovar_vicotria() == "Guanyen les blanques":
+                return render_template("home.html")
         else:
             missatge = "No s'ha pogut realitzar el moviment."
             return render_template("taulell.html", taulell=taulell, missatge=missatge)
@@ -1737,8 +1743,6 @@ def moviment_rei_blanc(
             return True
 
 
-
-
 # Fitxes Negres
 
 
@@ -1990,20 +1994,28 @@ def Travis():
 # borrar_contingut_CSV()
 
 
+def comprovar_vicotria():
+    reiN = []
+    reiB = []
+    for fila in taulell:
+        for casella in fila:
+            if casella["fitxa"] == "K" and casella["color"] == "N":
+                reiN.append(casella)
+            elif casella["fitxa"] == "K" and casella["color"] == "B":
+                reiB.append(casella)
+    if len(reiN) == 1 and len(reiB) == 1:
+        return False
+        # print("Ambdós reis són vius.")
+    elif len(reiN) == 1 and len(reiB) == 0:
+        return "Guanyen les negres"
+        # print("El rei blanc es mort")
+    elif len(reiB) == 1 and len(reiN) == 0:
+        # print("El rei negre es mort")
+        return "GUanyen les blanques"
+
+
+# comprovar_vicotria()
 # Configuración y arranque de la aplicación web
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.run(host="localhost", port=5000, debug=True)
 
-
-def comprovar_vicotria():
-    reis = []
-    for fila in taulell:
-        for casella in fila:
-            if casella["fitxa"] == "K":
-                reis.append(casella)
-                if len(reis) == 2:
-                    return False
-                elif casella["color"] == "N":
-                        return "Victoria als negres"
-                elif casella["color"] == "B":
-                        return "Victoria als blancs"

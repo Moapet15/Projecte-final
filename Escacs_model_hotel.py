@@ -1863,124 +1863,124 @@ def executar_moviment():
 # executar_moviment()
 
 
-# def Travis():
-#     # Espai dedicat a l'analisi del terreny
-#     for posicio_y_inicial, caselles_x in enumerate(taulell):
-#         for posicio_x_inicial, casella in enumerate(caselles_x):
-#             casella["posicio"] = (posicio_y_inicial) * 10 + (posicio_x_inicial)
-#             origen = f"{posicio_y_inicial}{posicio_x_inicial}"
-#             if casella["ocupada"] == True:
-#                 color = casella["color"]
-#                 pessa = casella["fitxa"]
-#                 if pessa == "P" and color == "N":
-#                     valor = "1"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     if (
-#                         taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                     ):
-#                         afegir_moviments(origen, pessa, color)
-#                 elif pessa == "P" and color == "B":
-#                     valor = "1"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     if (
-#                         taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                     ):
-#                         afegir_moviments(origen, pessa, color)
-#                 elif pessa == "T" and color == "N" or pessa == "T" and color == "B":
-#                     valor = "5"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     if (
-#                         posicio_y_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                         or posicio_y_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                         or posicio_x_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial][posicio_x_inicial + 1]["ocupada"]
-#                         == False
-#                         or posicio_x_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial][posicio_x_inicial - 1]["ocupada"]
-#                         == False
-#                     ):
-#                         afegir_moviments(origen, pessa, color)
-#                 elif pessa == "C" and color == "N" or pessa == "C" and color == "B":
-#                     valor = "3"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     afegir_moviments(origen, pessa, color)
-#                 elif pessa == "A" and color == "N" or pessa == "A" and color == "B":
-#                     valor = "3"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     if (
-#                         posicio_y_inicial + 1 < len(taulell)
-#                         and posicio_x_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial + 1][posicio_x_inicial + 1][
-#                             "ocupada"
-#                         ]
-#                         == False
-#                         or posicio_y_inicial - 1 < len(taulell)
-#                         and posicio_x_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial - 1][posicio_x_inicial - 1][
-#                             "ocupada"
-#                         ]
-#                         == False
-#                     ):
-#                         afegir_moviments(origen, pessa, color)
-#                 elif pessa == "Q" and color == "N" or pessa == "Q" and color == "B":
-#                     valor = "9"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     if (
-#                         posicio_y_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                         or posicio_y_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                         or posicio_x_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial][posicio_x_inicial + 1]["ocupada"]
-#                         == False
-#                         or posicio_x_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial][posicio_x_inicial - 1]["ocupada"]
-#                         == False
-#                         or posicio_y_inicial + 1 < len(taulell)
-#                         and posicio_x_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial + 1][posicio_x_inicial + 1][
-#                             "ocupada"
-#                         ]
-#                         == False
-#                         or posicio_y_inicial - 1 < len(taulell)
-#                         and posicio_x_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial - 1][posicio_x_inicial - 1][
-#                             "ocupada"
-#                         ]
-#                         == False
-#                     ):
-#                         afegir_moviments(origen, pessa, color)
-#                 elif pessa == "K" and color == "N" or pessa == "K" and color == "B":
-#                     valor = "50"
-#                     desti = "NaN"
-#                     escriure_posicions(pessa, color, origen, desti, valor)
-#                     if (
-#                         posicio_y_inicial + 1 < len(taulell)
-#                         and taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                         and taulell[posicio_y_inicial][posicio_x_inicial]["color"]
-#                         == "N"
-#                         or posicio_y_inicial - 1 < len(taulell)
-#                         and taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
-#                         == False
-#                         and taulell[posicio_y_inicial][posicio_x_inicial]["color"]
-#                         == "B"
-#                     ):
-#                         afegir_moviments(origen, pessa, color)
+def Travis():
+    # Espai dedicat a l'analisi del terreny
+    for posicio_y_inicial, caselles_x in enumerate(taulell):
+        for posicio_x_inicial, casella in enumerate(caselles_x):
+            casella["posicio"] = (posicio_y_inicial) * 10 + (posicio_x_inicial)
+            origen = f"{posicio_y_inicial}{posicio_x_inicial}"
+            if casella["ocupada"] == True:
+                color = casella["color"]
+                pessa = casella["fitxa"]
+                if pessa == "P" and color == "N":
+                    valor = "1"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    if (
+                        taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
+                        == False
+                    ):
+                        afegir_moviments(origen, pessa, color)
+                elif pessa == "P" and color == "B":
+                    valor = "1"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    if (
+                        taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
+                        == False
+                    ):
+                        afegir_moviments(origen, pessa, color)
+                elif pessa == "T" and color == "N" or pessa == "T" and color == "B":
+                    valor = "5"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    if (
+                        posicio_y_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
+                        == False
+                        or posicio_y_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
+                        == False
+                        or posicio_x_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial][posicio_x_inicial + 1]["ocupada"]
+                        == False
+                        or posicio_x_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial][posicio_x_inicial - 1]["ocupada"]
+                        == False
+                    ):
+                        afegir_moviments(origen, pessa, color)
+                elif pessa == "C" and color == "N" or pessa == "C" and color == "B":
+                    valor = "3"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    afegir_moviments(origen, pessa, color)
+                elif pessa == "A" and color == "N" or pessa == "A" and color == "B":
+                    valor = "3"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    if (
+                        posicio_y_inicial + 1 < len(taulell)
+                        and posicio_x_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial + 1][posicio_x_inicial + 1][
+                            "ocupada"
+                        ]
+                        == False
+                        or posicio_y_inicial - 1 < len(taulell)
+                        and posicio_x_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial - 1][posicio_x_inicial - 1][
+                            "ocupada"
+                        ]
+                        == False
+                    ):
+                        afegir_moviments(origen, pessa, color)
+                elif pessa == "Q" and color == "N" or pessa == "Q" and color == "B":
+                    valor = "9"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    if (
+                        posicio_y_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
+                        == False
+                        or posicio_y_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
+                        == False
+                        or posicio_x_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial][posicio_x_inicial + 1]["ocupada"]
+                        == False
+                        or posicio_x_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial][posicio_x_inicial - 1]["ocupada"]
+                        == False
+                        or posicio_y_inicial + 1 < len(taulell)
+                        and posicio_x_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial + 1][posicio_x_inicial + 1][
+                            "ocupada"
+                        ]
+                        == False
+                        or posicio_y_inicial - 1 < len(taulell)
+                        and posicio_x_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial - 1][posicio_x_inicial - 1][
+                            "ocupada"
+                        ]
+                        == False
+                    ):
+                        afegir_moviments(origen, pessa, color)
+                elif pessa == "K" and color == "N" or pessa == "K" and color == "B":
+                    valor = "50"
+                    desti = "NaN"
+                    escriure_posicions(pessa, color, origen, desti, valor)
+                    if (
+                        posicio_y_inicial + 1 < len(taulell)
+                        and taulell[posicio_y_inicial + 1][posicio_x_inicial]["ocupada"]
+                        == False
+                        and taulell[posicio_y_inicial][posicio_x_inicial]["color"]
+                        == "N"
+                        or posicio_y_inicial - 1 < len(taulell)
+                        and taulell[posicio_y_inicial - 1][posicio_x_inicial]["ocupada"]
+                        == False
+                        and taulell[posicio_y_inicial][posicio_x_inicial]["color"]
+                        == "B"
+                    ):
+                        afegir_moviments(origen, pessa, color)
     # executar_moviment()
     # print("Podem fer el moviment")
     # borrar_contingut_CSV()

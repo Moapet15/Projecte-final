@@ -1,6 +1,6 @@
 def usuari():
     host="Localhost"
     user = "root"
-    passwd = ""
+    passwd = "hola"
     database="escacs"
     return host, user, passwd, database
